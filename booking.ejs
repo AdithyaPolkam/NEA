@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book An Appointment</title>
+    <link href="stylesheets/BookingStyling.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">DentView </h2> <!-- DentView logo -->
+        <nav class="navigation">
+            <a href="/">Home</a> <!-- Navigation link to Home -->
+            <a href="http://localhost:3000/">Book Appointment</a> <!-- Navigation link to Book Appointment -->
+            <a href="#">Contact Us</a> <!-- Navigation link to Contact Us -->
+            <a href="/login">Dentist Admin - Log In</a>
+        </nav>
+    </header>
+    
+
+
+    <div class="wrapper">
+        <h1>Book an Appointment</h1>
+
+        <form action="/booking" method="POST">
+
+            <div>
+                <label>Date:</label>
+                <input type="date" name="date">
+            </div>
+
+            <div>
+                <label>Time:</label>
+                <select name="time">
+                    <option value="9:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">13:00 PM</option>
+                    <option value="14:00">14:00 PM</option>
+                    <option value="15:00">15:00 PM</option>
+                    <option value="16:00">16:00 PM</option>
+                    <option value="17:00">17:00 PM</option>
+                    
+                </select>
+            </div>
+
+
+            <div>
+                <label>Name:</label>
+                <input type="text" name="name">
+            </div>
+
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email">
+            </div>
+
+            <div>
+                <label>Phone:</label>
+                <input type="tel" name="phone">
+            </div>
+
+            <div>
+                <label>Notes:</label>
+                <textarea name="notes" rows="4" cols="50" placeholder="Any parts of the model you saw previously which you personally have pain in"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    <div>
+
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <p class="error-message"><%= errorMessage %></p>
+          <% } %>
+</body>
+
+</html>

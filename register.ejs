@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-AU-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dentview</title>
+
+  <link href="stylesheets/style2.css" rel="stylesheet">
+
+  <style>
+    .error-message {
+      color: 079fa2;
+      font-weight: bold;
+      font-size : 25px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    
+
+    <h2 class="logo">DentView</h2>
+    
+    <nav class="navigation">
+      <a href="/">Home</a>
+      <a href="/booking">Book Appointment</a>  
+      <a href="#">Contact Us</a>
+      <a href="/login">Dentist Admin - Log In</a>
+    </nav>
+
+  </header>
+
+  <div class="wrapper">
+
+    <div class="form-box">
+
+      <div class="form-box login">
+        
+        <h2>Register</h2>
+
+        <form action="/register" method="POST">
+          
+          <div class="input-box">
+            <span class="icon"></span>
+            <input type="email" id="email" name="useremail" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <input type="password" id="password" name="userpassword" required>
+            <span class="icon"></span>
+            <label>Password</label>
+          </div>
+
+          <button type="submit" class = "btn">Register</button>
+
+          <div class="login-register">
+            <p>Already have an account?</p>
+            <a href="/login" class="register-link">Login</a>
+          </div>
+
+
+          <% if (typeof errorMessage !== 'undefined') { %>
+            <p class="error-message"><%= errorMessage %></p>
+          <% } %>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+ 
+
+</body>
+
+</html>
